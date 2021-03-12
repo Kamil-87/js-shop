@@ -1,45 +1,44 @@
 @import "nullstyle";
+@import "variables";
 
 .container {
-  margin: 0 auto;
-  padding-left: 45px;
-  padding-right: 45px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
-//header
+/*------- header -----------*/
+
 .header {
   background: #1D318A;
   height: 60px;
-  color: #FFFFFF;
-  text-transform: uppercase;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+  flex: 0 0 auto;
+
   &__box {
     display: flex;
     align-items: center;
   }
-  
+
   &__logo {
     font-size: 1.8rem;
     line-height: 120%;
     margin-right: 8rem;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    font-weight: bold;
   }
-  
+
   &__menu {
     display: flex;
     align-items: center;
-  }
-  
-  &__btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    background: green;
-    color: #FFFFFF;
   }
 }
 
@@ -48,11 +47,13 @@
     font-size: 1.6rem;
     line-height: 6rem;
     height: 6rem;
+    text-transform: uppercase;
     text-decoration: none;
     color: #FFFFFF;
+    font-weight: bold;
     padding: 0 1.5rem;
     display: block;
-    
+
     &:hover {
       background: #FFFFFF;
       color: #1D318A;
@@ -62,4 +63,83 @@
       color: #1D318A;
     }
   }
+}
+
+.cart-mini {
+  position: relative;
+  &__btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: green;
+    color: #FFFFFF;
+  }
+  &__modal {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 290px;
+    min-height: 40px;
+    padding: 1.5rem;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 100;
+    background: #FFFFFF;
+  }
+
+  &__body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &_center {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__title {
+    max-width: 15rem;
+    text-align: left;
+    &_bold {
+      font-weight: bold;
+    }
+  }
+  &__price {
+    text-align: right;
+    &_bold {
+      font-weight: bold;
+    }
+  }
+  &__line {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #E5E5E5;
+  }
+}
+
+
+/*------- main -----------*/
+
+.main {
+  flex: 1 0 auto;
+}
+
+/*------- footer -----------*/
+
+.footer {
+  height: 5rem;
+  background: #444444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+
+  &__text {
+    color: #FFFFFF;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+  &__date {}
 }

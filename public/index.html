@@ -4,33 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ESHOP</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/main.css"/>
 </head>
 <body>
-  <header class="header container">
-      <nav class="header__box ">
-        <div class="header__logo">
-          <p>E-SHOP</p>
-        </div>
-        <ul class="header__menu menu">
-          <li class="menu__list"><a href="#" class="menu__link menu__link_active">Главная</a></li>
-          <li class="menu__list"><a href="#" class="menu__link">Каталог</a></li>
-          <li class="menu__list"><a href="#" class="menu__link">Формы</a></li>
-        </ul>
-      </nav>
-      <div>
-        <button class="header__btn">Корзина</button>
+<header class="header container">
+  <nav class="header__box ">
+    <div class="header__logo">
+      <p>E-SHOP</p>
+    </div>
+    <ul class="header__menu menu">
+      <li class="menu__list"><a href="#" class="menu__link menu__link_active">Главная</a></li>
+      <li class="menu__list"><a href="#" class="menu__link">Каталог</a></li>
+      <li class="menu__list"><a href="#" class="menu__link">Формы</a></li>
+    </ul>
+  </nav>
+  <div class="header__cart-mini cart-mini">
+    <button class="cart-mini__btn">Корзина</button>
+
+    <div class="cart-mini__modal">
+      <div class="cart-mini__body cart-mini__body_center">
+        <p>Корзина пуста</p>
       </div>
-  </header>
+    </div>
 
-  <main>
-    <div class="goods-list"></div>
-    <div class="btn showmore">Загрузить еще</div>
-  </main>
+    <!--        <div class="cart-mini__modal">
+              <div class="cart-mini__body">
+                <p class="cart-mini__title">Водонепроницаемый Рюкзак</p>
+                <p class="cart-mini__price"><span>9 800</span> х <span> 2</span></p>
+              </div>
 
-  <footer>
+              <hr class="cart-mini__line">
 
-  </footer>
+              <div class="cart-mini__body">
+                <p class="cart-mini__title">BRP Audio-Premium System</p>
+                <p class="cart-mini__price"><span>68 000</span> х <span> 1</span></p>
+              </div>
+
+              <hr class="cart-mini__line">
+
+              <div class="cart-mini__body">
+                <p class="cart-mini__title cart-mini__title_bold">Общая сумма</p>
+                <p class="cart-mini__price cart-mini__price_bold"><span>87 600</span> руб</p>
+              </div>
+            </div>-->
+  </div>
+</header>
+
+<main class="main">
+  <div class="goods-list"></div>
+  <div class="btn show-more">Показать еще</div>
+</main>
+
+<footer class="footer">
+  <p class="footer__text">Все права защищены <span class="footer__date">2021</span></p>
+</footer>
 <!--  <script src="button.js"></script>-->
 <!--  <script src="shop.js"></script>-->
 </body>
