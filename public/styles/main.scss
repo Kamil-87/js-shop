@@ -1,5 +1,6 @@
 @import "nullstyle";
 @import "variables";
+@import "mixins";
 
 .container {
   padding-left: 30px;
@@ -15,12 +16,13 @@ body {
 /*------- header -----------*/
 
 .header {
-  background: #1D318A;
+  background: $primary-color;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex: 0 0 auto;
+  overflow-x: auto;
 
   &__box {
     display: flex;
@@ -32,8 +34,12 @@ body {
     line-height: 120%;
     margin-right: 8rem;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: $white-color;
     font-weight: bold;
+
+    & > p {
+      white-space: nowrap;
+    }
   }
 
   &__menu {
@@ -49,18 +55,18 @@ body {
     height: 6rem;
     text-transform: uppercase;
     text-decoration: none;
-    color: #FFFFFF;
+    color: $white-color;
     font-weight: bold;
     padding: 0 1.5rem;
     display: block;
 
     &:hover {
-      background: #FFFFFF;
-      color: #1D318A;
+      background: $white-color;
+      color: $primary-color;
     }
     &_active {
-      background: #FFFFFF;
-      color: #1D318A;
+      background: $white-color;
+      color: $primary-color;
     }
   }
 }
@@ -72,7 +78,7 @@ body {
     font-size: 16px;
     border-radius: 5px;
     background: green;
-    color: #FFFFFF;
+    color: $white-color;
   }
   &__modal {
     position: absolute;
@@ -85,7 +91,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     z-index: 100;
-    background: #FFFFFF;
+    background: $white-color;
   }
 
   &__body {
@@ -115,7 +121,7 @@ body {
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    border: 1px solid #E5E5E5;
+    border: 1px solid $light-grey-color;
   }
 }
 
@@ -124,20 +130,121 @@ body {
 
 .main {
   flex: 1 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.products-box {
+  display: flex;
+}
+
+.product {
+  &__card {
+    border: 1px solid $light-grey-color;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 270px;
+    height: 400px;
+  }
+  &__img {
+    position: relative;
+  }
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    & > svg {
+      width: 24px;
+      height: 22px;
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+  }
+  &__name {
+    font-size: 18px;
+    line-height: 21px;
+    color: $primary-text-color;
+    overflow: hidden;
+    max-height: 40px;
+  }
+  &__price {
+    //font-family: Barlow;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    color: $primary-text-color;
+
+    & > span {
+      margin-left: 5px;
+    }
+  }
+
+  &__btn {
+    font-size: 16px;
+    color: $white-color;
+    background-color: $primary-color;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: all 3ms;
+    display: inline-flex;
+    align-items: center;
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      color: lighten($white-color, 10%);
+    }
+    &:active {
+      background-color: lighten($primary-color, 5%);
+      color: lighten($white-color, 5%);
+    }
+
+    & > svg {
+      width: 23px;
+      height: 23px;
+      margin-right: 10px;
+      fill: $white-color;
+    }
+  }
+}
+
+.btn-ghost-primary {
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 10px 15px;
+  background: transparent;
+  transition: all 3ms;
+
+  &:hover {
+    border-color: lighten($primary-color, 10%);
+    color: lighten($primary-color, 10%);
+  }
+  &:active {
+    position: relative;
+    top: 2px;
+  }
 }
 
 /*------- footer -----------*/
 
 .footer {
   height: 5rem;
-  background: #444444;
+  background: $dark-color;
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  overflow: hidden;
 
   &__text {
-    color: #FFFFFF;
+    color: $white-color;
     font-size: 1.8rem;
     line-height: 2.1rem;
   }

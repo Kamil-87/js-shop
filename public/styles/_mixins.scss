@@ -1,0 +1,97 @@
+@import "variables";
+
+@mixin mix-transition($transitions...) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  transition: $transitions;
+}
+
+@mixin mix-appearance($appearance: none) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  -ms-appearance: $appearance;
+  appearance: $appearance;
+}
+
+@mixin mix-border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin mix-color-variant(
+  $font-color: $white-color,
+  $bg-color: $primary-color,
+  $border-color: $mix-border-color,
+  $ghost: $mix-ghost
+) {
+  color: $font-color;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+
+  &:hover,
+  &:focus {
+    color: darken($font-color, 5%);
+    border-color: darken($border-color, 6%);
+
+    @if $ghost == true {
+      $bg-color: rgba($white-color, .1);
+    }
+
+    background-color: darken($bg-color, 5%);
+  }
+}
+
+@mixin mix-button-size(
+  $mix-height: $base-height,
+  $mix-spacing: $base-spacing,
+  $mix-font-size: $base-font-size
+) {
+  height: $mix-height;
+  line-height: $mix-height;
+  padding: 0 $mix-spacing;
+  font-size: $mix-font-size;
+}
+
+%default-mix-button {
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &:active {
+    position: relative;
+    top: 2px;
+  }
+}
+
+@mixin mix-button(
+  $bg-color: $primary-color,
+  $font-color: $white-color,
+  $font-weight: $font-weight,
+  $text-transform: $mix-ttransform,
+) {
+  @extend %default-mix-button;
+  font-weight: $font-weight;
+  text-transform: $mix-ttransform;
+
+  $border-color: darken($bg-color, 5%);
+  $bg-color: $bg-color;
+
+  @if $mix-ghost == true {
+    $bg-color: transparent;
+    $border-color: darken($font-color, 5%);
+  }
+
+  @include mix-border-radius($border-radius);
+  @include mix-color-variant($font-color, $bg-color, $border-color, $mix-ghost);
+}
