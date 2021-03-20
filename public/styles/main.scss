@@ -134,8 +134,15 @@ body {
   padding-bottom: 30px;
 }
 
-.products-box {
-  display: flex;
+.products {
+  text-align: center;
+  &-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-gap: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .product {
@@ -148,9 +155,17 @@ body {
     justify-content: space-between;
     width: 270px;
     height: 400px;
+    
+    &:hover {
+      box-shadow: 3px 3px 20px rgba(50, 50, 50, 0.25);
+      cursor: pointer;
+    }
   }
   &__img {
     position: relative;
+    height: 20rem;
+    display: flex;
+    align-items: center;
   }
   &__icon {
     position: absolute;
@@ -220,15 +235,18 @@ body {
   font-weight: 700;
   padding: 10px 15px;
   background: transparent;
-  transition: all 3ms;
+  transition: all .2s;
 
   &:hover {
     border-color: lighten($primary-color, 10%);
     color: lighten($primary-color, 10%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  
   }
   &:active {
     position: relative;
     top: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 }
 
